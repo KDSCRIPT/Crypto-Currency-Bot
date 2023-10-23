@@ -9,7 +9,14 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from scipy import stats
 import numpy as np
-
+class CustomAdam(tf.keras.optimizers.Optimizer):
+    def __init__(self, learning_rate=0.001, beta_1=0.9, beta_2=0.999, epsilon=1e-7, name="CustomAdam", **kwargs):
+        super(CustomAdam, self).__init__(name, **kwargs)
+        self._set_hyper("learning_rate", kwargs.get("lr", learning_rate))
+        self._set_hyper("beta_1", beta_1)
+        self._set_hyper("beta_2", beta_2)
+        self.epsilon = epsilon or tf.keras.backend.epsilon()
+tf.keras.utils.get_custom_objects()['CustomAdam'] = CustomAdam
 # Define trading parameters
 st.title("Crypto Trading Bot")
 
