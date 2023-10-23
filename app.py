@@ -7,7 +7,6 @@ import requests
 import datetime
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-from tensorflow.keras import layers
 from scipy import stats
 import numpy as np
 
