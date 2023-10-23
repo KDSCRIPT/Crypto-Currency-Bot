@@ -17,7 +17,3 @@ streamlit==1.6.0
 tensorboard==2.10.0
 tensorflow-estimator==2.7.0
 tensorflow-io-gcs-filesystem==0.22.0
-torch==1.10.0
-torchinfo==1.10.0
-torchvision==0.10.0
-ultralytics==9.0.0
