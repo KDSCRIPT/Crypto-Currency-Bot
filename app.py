@@ -77,7 +77,7 @@ else:
     # Calculate Mean Absolute Error (MAE) using your model
     # Ensure you have the actual and predicted values for your model
     model_name = f"{cryptocurrency}_model.h5"
-    model = tf.keras.models.load_model(model_name)
+    model = tf.keras.models.load_model(model_name,compile=False)
     actual_prices = historical_data["close"]  # Replace with your actual prices
     make_forecasts = make_future_forecasts(actual_prices, model)
     st.header("Bitcoin Price Forecast for the Next Seven Days")
